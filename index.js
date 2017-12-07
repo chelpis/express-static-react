@@ -8,10 +8,9 @@ const { PORT } = config
 const app = express()
 app.use(compress())
 
-const indexFileLocation = path.join(__dirname, 'public', 'index.html')
-app.use(express.static(indexFileLocation))
+app.use(express.static(path.join(__dirname, 'public')))
 app.get('*', (req, res) => {
-  res.sendFile(indexFileLocation)
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
 console.log('Starting server...')
