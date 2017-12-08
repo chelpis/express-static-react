@@ -1,0 +1,11 @@
+version: '2'
+services:
+  express:
+    image: "roadmanfong/express-static-react"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./public:/express/public
+      # - ./ssl:/express/ssl
+    restart: always
