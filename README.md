@@ -14,3 +14,7 @@ edit `config.js`
 
 express/public
 express/ssl
+
+## Prerender
+set env varaible `PRERENDER_TOKEN` to get prerender work
+https://prerender.io/

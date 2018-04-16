@@ -21,6 +21,11 @@ var options = {
 const app = express()
 app.use(compress())
 
+if (process.env.PRERENDER_TOKEN) {
+  app.use(require('prerender-node'))
+    .set('prerenderToken', process.env.PRERENDER_TOKEN)
+}
+
 app.use(express.static(path.join(__dirname, 'public')))
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'))
