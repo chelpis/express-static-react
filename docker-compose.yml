@@ -1,14 +1,14 @@
 version: '2'
 services:
   express:
-    image: "roadmanfong/express-static-react"
+    image: "roadmanfong/express-static-react#prerender"
     # build: './'
     ports:
       - "80:80"
       - "443:443"
     volumes:
       - ./public:/express/public
-      # - ./ssl:/express/ssl
+      - ./ssl:/express/ssl
     environment:
       - PRERENDER_TOKEN
     restart: always
