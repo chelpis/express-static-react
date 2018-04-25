@@ -1,7 +1,7 @@
 version: '2'
 services:
   express:
-    image: "roadmanfong/express-static-react#prerender"
+    image: "roadmanfong/express-static-react:prerender"
     # build: './'
     ports:
       - "80:80"
